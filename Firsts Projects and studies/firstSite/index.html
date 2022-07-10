@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caminhos da Brasilidade">
+    <title>Caminhos da Brasilidade</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        document.querySelector("#hamburguer button") .addEventListener("click", function() {
+            if(document.querySelector(".navul").style.display == 'flex') {
+            document.querySelector(".navul").style.display = 'none';
+        } else {
+            document.querySelector(".navul").style.display = 'flex';
+        }
+    });
+    }
+    </script>
+</head>
+<body>
+    
+    <header>
+        <img src="img/logo.jpeg" alt="Logomarca">
+
+            <div id="hamburguer">
+                <button>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        <nav>
+            <ul class="navul">
+                <li>
+                    <a href="">home</a>
+                </li>
+                <li>
+                    <a href="">product</a>
+                </li>
+                <li>
+                    <a href="">pricing</a>
+                </li>
+                <li>
+                    <a href="">resources</a>
+                </li>
+                <li>
+                    <a class="login" href="">Log in</a>
+                </li>
+                <li>
+                    <a class="signup" href="">sign Up</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="section1">
+            <h1>Starting your career path can be complicated</h1>
+            <h2>Super powerful and flexible tools. Capable of organazing all your tasks and connect all your costumers on one piece</h2>
+            <input type="submit" value="Get Started">
+            <p>No credit card required</p>
+        </section>
+        <div class="s2box">
+            <section class="section2">
+                <div class="s2-text1">
+                    <div>
+                        <img src="https://img.icons8.com/color/50/000000/amelie-poulain.png"/>
+                        <h3>Client Notification</h3>
+                    </div>
+                    <p>Congratulations! You have a new project inquiry from Amanda Wilson</p>
+                </div>
+                <div class="s2-text2">
+                    <div>
+                        <img src="https://img.icons8.com/color/48/000000/clipboard.png"/>
+                        <h3>Plataform Notification</h3>
+                    </div>
+                        <p>You have 12 tasks due tomorrow. Hurry up and keep your score high</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-title">Carrer stress is a thing of past</div>
+        <div class="footer-boxes">
+            <div>
+                <h2>Before careero</h2>
+                <p>You send emails, wait forever to recieve the documents from clients only to find out clients</p>
+            </div>
+            <div>
+                <h2>After careero</h2>
+                <p>We fetch everything you need to prepare your client's T1, organize in one place ready to</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
