@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário do amor</title>
+    <link rel="stylesheet" href="form1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Praise&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+
+    <div>
+    <fieldset>
+        <legend>Formulário 1</legend>
+            <form action="login.html" method="GET" enctype="multipart-form-data">
+               
+                    <label>
+                        Nome: <br>
+                        <input class="inputcss" type="text" name="name" placeholder="Escreva seu nome" required minlength="3">
+                    </label>
+
+                    <label>
+                        E-mail: <br>
+                        <input class="inputcss" type="email" name="email" placeholder="Escreva o seu email" required>        
+                    </label>
+
+                    <label>
+                        Tipo de mensagem: <br>
+                        <select class="select" name="reclametiontype">
+                            <option value="1">Reclamação</option>
+                            <option value="2" selected>Elogio</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Mensagem: <br>
+                        <textarea name="mensage" required></textarea>
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" name="terms" required>
+                        Declaro que li e aceito os <a class="nolink" href="termos.html">termos de uso</a>
+                    </label>
+                    <label>
+                        Foto
+                        <br>
+                        <input type="file" name="phoyo">
+                    </label>
+
+                    <button class="opacity">Enviar</button>
+
+        </form>
+</fieldset>
+</div>
+</body>
+</html>

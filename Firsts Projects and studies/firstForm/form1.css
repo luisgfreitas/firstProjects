@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+fieldset {
+    font-size: 20px;
+    width: 700px;
+    text-align: left;
+    background: linear-gradient(#f5d5e2, #bce6d7, #c5b2d5);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: none;
+    
+}
+
+legend {
+    background-color: #f5d5e2;
+
+}
+
+button  {
+    background-color: #c5b2d5;
+    padding: 5px;
+    font-size: 14px;
+    width: 100px;
+}
+
+label {
+    display: block;
+    padding-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+
+}
+
+
+.inputcss, textarea, select {
+
+    width:500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #6a7973;
+    outline: none;
+    margin-top: 5px;
+    
+}
+
+textarea {
+    resize: none;
+    height: 200px;
+}
+
+button:hover {
+    background-color: #d4c3e4;
+
+}
+
+select {
+    width: 188px;
+}
+
+.nolink {
+    text-decoration: none;
+    color: black;
+} 
+.nolink:hover {
+    color: rgb(114, 114, 114);
+}
+
+body {
+    background-color: brown;
+}
+
+@media (min-width: 1000px) {
+    
+    body {
+        background-color: blue;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+    body {
+        background-color: red;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+    body {
+        background-color: aquamarine;
+    }
+
+    h1 {
+        font-size: 15px;
+    }
+
+}
