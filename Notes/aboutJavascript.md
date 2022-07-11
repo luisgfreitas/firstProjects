@@ -1,13 +1,13 @@
 # JS STUDIES
 
-## CARACTERISTICS
+# CARACTERISTICS
 
 * Case sensitive
 * Mutable typing
     * variable can be changed
 * Multiparadigm
 
-## VARIABLES
+# VARIABLES
 * A variable is a container for a value
 
 ----
@@ -41,7 +41,8 @@ const can't be redeclared or redefined
 `const name = "Louis;"` :x:
 
 ----
-## Variable types
+
+# VARIABLE TYPES
 
 ### Numbers
 `let myAge = 17;`
@@ -75,7 +76,8 @@ myNumberArray[2]; // should return 40
 > Use const when you can, and use let when you have to.
 
 ----
-## Undefined and Null
+
+# Undefined and Null
 
 ### Undefined
 The variable don't have a value
@@ -87,7 +89,8 @@ A reference that points, generally intentionally, to a nonexistent or invalid ob
 `let name = null`
 
 ----
-## OPERATORS
+
+# OPERATORS
 
 ### +, -, * and /
 The simple arithmetics operations
@@ -148,7 +151,7 @@ console.log(numero++);
 * `||` = or
 * `!` = no
 
-## OBJECTS
+# OBJECTS
 The objects serve to group data
 
 ### Syntax of literal object
@@ -220,7 +223,7 @@ console.log("Conteúdo: " + conteudo_curiosidade);
 
 `Math.floor()` rounds the number down to the nearest whole number
 
-## CONDITIONALS
+# CONDITIONALS
 
 ### if/else if/else
 
@@ -312,7 +315,7 @@ switch(produto)
 }
 ```
 
-## INPUTS
+# INPUTS
 
 sometimes the user needs to enter some data in the system for his objective to be completed. This function isn't native from JavaScript.
 
@@ -383,7 +386,7 @@ We too have an way to get the size of an array:
 
 `funcionarios.length`
 
-## Repetition structures
+# REPETITION STRUCTURES
 
 ### while
 
@@ -466,3 +469,248 @@ for ( let email of emails_alunos ) {
 // Email: gustavo@email.com
 ```
 
+# STRING MANIPULATION
+
+### Template string
+
+```javascript
+let linguagem = "JavaScript";
+let stack = "mobile";
+
+switch (stack) {
+  case "back-end":
+    console.log(`Estude Node.js para programação ${stack} em ${linguagem}`);
+    break;
+
+  case "front-end":
+    console.log(`Estude React para programação ${stack} em ${linguagem}`);
+    break;
+
+  case "mobile":
+    console.log(`Estude React Native para programação ${stack} em ${linguagem}`);
+    break;
+
+  default:
+    console.log(`Tecnologia indisponível para ${stack}`);
+    break;
+}
+```
+
+### toLowerCase/toUpperCase
+```javascript
+let programador_1 = "Flávia";
+let programador_2 = "Rogério";
+
+console.log(programador_1.toUpperCase()); // FLÁVIA
+
+console.log(programador_2.toLowerCase()); // rogério
+```
+### trim
+```javascript
+let nome = "   Diego     ";
+
+let resultado = nome.trim();
+
+console.log(resultado); // Diego
+```
+### padStart/padEnd
+```javascript
+let label = "Email: ";
+let email = "contato@email.com";
+
+console.log( label.padEnd(20, ' ') + email );
+// Email:              contato@email.com
+```
+### replace
+```javascript
+let texto = "Gabriel adora JavaScript! Ele faz exercícios de JavaScript todos os dias para aprender mais.";
+
+let resultado = texto.replace("JavaScript", "JS");
+
+console.log(resultado); // Gabriel adora JS! Ele faz exercícios de JavaScript todos os dias para aprender mais.
+```
+### substring/substr
+```javascript
+let frase = "Estou aprendendo JavaScript na DevMedia";
+let resultado = frase.substr(17, 10);
+console.log(resultado); // JavaScript
+
+let frase = "Eu sou programador JavaScript";
+let resultado = frase.substring(7, 18);
+console.log(resultado); // programador
+```
+### indexOf
+```javascript
+let frase = "Tudo o que um sonho precisa para ser realizado é alguém que acredite que ele possa ser realizado.";
+let posicao = frase.indexOf("sonho");
+
+console.log(posicao); // 14
+```
+### split
+```javascript
+let paises_string = "Brasil Espanha Canadá Irlanda Suíça";
+
+let paises_array = paises_string.split(" ");
+
+console.log(paises_array); // (5) ["Brasil", "Espanha", "Canadá", "Irlanda", "Suíça"]
+```
+
+## DATA MANIPULATION
+
+# DATA MANIPULATION
+
+## Native functions of Data
+
+### Creating a Data object
+```javascript
+const actualDate = new Date();
+```
+* if we can't define a date, the date's system will be considerated. That's the format:
+
+`2022-12-31T23:59:59:999Z`
+
+### Parameters for data object
+* year-month-day `2022-12-31`
+* hour-minuts-seconds `23:59:59`
+* year-month-day hour-minuts-seconds`2022-12-31 23:59:59`
+* all separeted by coma `2022, 12, 31, 23, 59, 59, 999`
+
+### UTC and timestamp
+* to print an UTC data form, we use that format:
+```javascript
+console.log(today.toString())
+//Tue Nov 10 2022 17:19:39 GMT-0300 (Brasilia standard time)
+console.log(today.toUTCString())
+//Tue Nov 10 2022 17:19:39 GMT-0300 (UTC)
+```
+* timestamp is a numeric representation of UTC date, in millisseconds, to Unix Epoch (Jan 1 1970 00:00:00) from today
+```javascript
+const today = new Date();
+console.log(today.valueOf());
+//1657495295510
+```
+* Example using timestamp
+```javascript
+const dataAtual = new Date();
+const dataPostagem = new Date('2020-11-11T00:00');
+
+// Pegando o timestamp das datas
+const timeAtual = dataAtual.getTime();
+const timePostagem = dataPostagem.getTime();
+
+// Verifica a diferença em milissegundos
+const diferenca = timeAtual - timePostagem;
+
+// Convertendo em horas
+const segundos = diferenca / 1000;
+const minutos = segundos / 60;
+const horas = minutos / 60;
+
+// Exibindo a diferença
+console.log(horas);
+```
+
+### Getters
+* We can get especific Date values in the form of number by some native functions:
+```javascript
+const dataAtual = new Date();
+
+console.log(dataAtual.getFullYear());
+console.log(dataAtual.getMonth());
+console.log(dataAtual.getDate());
+console.log(dataAtual.getHours() );
+console.log(dataAtual.getMinutes());
+console.log(dataAtual.getSeconds());
+console.log(dataAtual.getMilliseconds());
+console.log(dataAtual.getDay());
+console.log(dataAtual.getUTCFullYear());
+console.log(dataAtual.getUTCMonth());
+console.log(dataAtual.getUTCDate());
+console.log(dataAtual.getUTCHours());
+console.log(dataAtual.getUTCMinutes());
+console.log(dataAtual.getUTCSeconds());
+console.log(dataAtual.getUTCMilliseconds());
+console.log(dataAtual.getUTCDay());
+console.log(dataAtual.getTime());
+console.log(dataAtual.getTimezoneOffset());
+console.log(dataAtual.valueOf());
+```
+* We also can get some data in the form of string:
+```javascript
+console.log(dataAtual.toLocaleDateString('pt-BR', personalizandoData));
+console.log(dataAtual.toLocaleTimeString('pt-BR', personalizandoTempo));
+console.log(dataAtual.toLocaleString('pt-BR', personalizandoDataTempo));
+```
+
+* How we can see, this getters can be personalized.For more informations, consult MDN database.
+
+### Setters
+```javascript
+const dataAtual = new Date();
+
+dataAtual.setFullYear(1998);
+dataAtual.setMonth(1);
+dataAtual.setDate(20);
+dataAtual.setHours(11);
+dataAtual.setMinutes(0);
+dataAtual.setSeconds(59);
+dataAtual.setMilliseconds(15);
+
+//settersUTC
+dataAtual.setUTCFullYear(1998);
+dataAtual.setUTCMonth(5);
+dataAtual.setUTCDate(20);
+dataAtual.setUTCHours(11);
+dataAtual.setUTCMinutes(0);
+dataAtual.setUTCSeconds(59);
+dataAtual.setUTCMilliseconds(15);
+```
+
+# FUNCTIONS
+* Functions are blocks of code that perform a task
+* Parameter is the value that the functions recieve to use in the block code. We can use that functions like that:
+```javascript
+function returns_version() {
+    return 1.1;
+}
+let version = return_version();
+console.log(version)
+```
+* but we can need put a variable inside these blocks. So we soo can do functions with parameters:
+
+```javascript
+function returnsNotes(note1, note2) {
+    let media = (note1 + note2) / 2;
+    let status;
+
+    if (media > 6) {
+        status = "approved";
+    } else {
+        status = "disapproved";
+    }
+    return status;
+}
+    let status1 = returnNotes(6, 7)
+    console.log("Member 1: " + status1)
+    let status2 = returnNotes(5, 4)
+    console.log("Member 2: " + status2)
+```
+
+## Arrow functions
+* We can construct functions in a most simple way, with ou without parameters, like that:
+```javascript
+const retorna_media = (nota_1, nota_2) => {
+
+    let media = (nota_1 + nota_2) / 2;
+    return media;
+}
+let media_aluno = retorna_media(9, 8);
+console.log("A média do aluno é: " + media_aluno);
+```
+* And we can further reduce this function if our only objective is return just one line of code:
+```javascript
+const retorna_media = (nota_1, nota_2) => (nota_1 + nota_2) / 2;
+
+let media_aluno = retorna_media(9, 8);
+console.log("A média do aluno é: " + media_aluno);
+```
