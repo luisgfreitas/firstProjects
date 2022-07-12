@@ -714,3 +714,180 @@ const retorna_media = (nota_1, nota_2) => (nota_1 + nota_2) / 2;
 let media_aluno = retorna_media(9, 8);
 console.log("A média do aluno é: " + media_aluno);
 ```
+
+# NATIVE ARRAY FUNCTIONS
+
+### push
+* Add an element in the end of an array:
+```javascript
+const diasDaSemana = [
+    "domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira"
+];
+
+diasDaSemana.push("sábado");
+// add "sábado"
+```
+
+### splice
+* Remove an element of the array:
+```javascript
+const diasDaSemana = [
+    "domingo", "segunda-feira", "terça-feira",
+    "quarta-feira", "quinta-feira", "sexta-feira", "sábado"
+];
+
+diasDaSemana.splice(2,1);
+// removing "terça-feira"
+diasDaSemana.splice(1,3);
+// removing "segunda-feira", "terça-feira", "quarta-feira"
+```
+
+### pop
+* Remove the last element of the array:
+```javascript
+const diasDaSemana = [
+    "domingo", "segunda-feira", "terça-feira",
+    "quarta-feira", "quinta-feira", "sexta-feira", "sábado"
+];
+
+diasDaSemana.pop(); //remove "sábado"
+```
+
+### shift
+* Remove the first element of the array:
+```javascript
+const diasDaSemana = [
+    "domingo", "segunda-feira", "terça-feira",
+    "quarta-feira", "quinta-feira", "sexta-feira", "sábado"
+];
+
+diasDaSemana.shift(); //remove "domingo"
+```
+
+----
+### Practical Example
+```javascript
+const produto = {
+    nome: 'New Super Mario Bros.', qnt: 1, valor: 250
+};
+
+const carrinho = [
+    {  nome: 'The Legend of Zelda', qnt: 1, valor: 250 },
+    {  nome: 'Super Mario Kart 8', qnt: 1, valor: 300 },
+];
+
+// Insere o produto no carrinho
+carrinho.push(produto);
+
+// Remove o item "Super Mario Kart 8"
+carrinho.splice(1,1);
+
+// Remove todos os elementos do carrinho
+const totalElementos = carrinho.length;
+carrinho.splice(0,totalElementos);
+```
+----
+
+### forEach
+* Through it we can execute a function for each element of the array:
+```javascript
+const carrinho = [
+  {  nome: 'The Legend of Zelda', qnt: 1, valor: 250 },
+  {  nome: 'Super Mario Kart 8', qnt: 1, valor: 300 },
+  {  nome: 'New Super Mario Bros.', qnt: 1, valor: 250 }
+];
+
+function imprimirItem( produto, index ) {
+  let texto = index + ' - ';
+  texto += produto.qnt + ' UN - ';
+  texto += produto.nome + ' - ';
+  texto += 'R$ ' + produto.valor + ' - ';
+  texto += 'R$ ' + produto.qnt * produto.valor;
+
+  console.log( texto );
+}
+
+carrinho.forEach(imprimirItem);
+```
+
+### map
+* create an array from another
+* syntax:
+```javascript
+const array2 = array1.map(functionToBeExecuted);
+```
+* example: 
+```javascript
+const carros = [
+  { marca: 'Fiat', modelo: 'Uno', anoFabricacao: 2015 },
+  { marca: 'GM', modelo: 'Onix', anoFabricacao: 2018 },
+  { marca: 'Ford', modelo: 'KA+', anoFabricacao: 2018 },
+  { marca: 'Fiat', modelo: 'Cronos', anoFabricacao: 2020 },
+];
+
+function retornaCarro(carro) {
+  return carro.marca + ' ' + carro.modelo + ' ano: ' + carro.anoFabricacao;
+}
+const novosCarros = carros.map(retornaCarro);
+console.log(novosCarros);
+```
+
+### filter
+* we can sellect some patterns to `filter()` return:
+```javascript
+const carros = [
+    { marca: 'Fiat', modelo: 'Uno', anoFabricacao: 2015 },
+    { marca: 'GM', modelo: 'Onix', anoFabricacao: 2018 },
+    { marca: 'Ford', modelo: 'KA+', anoFabricacao: 2018 },
+    { marca: 'Fiat', modelo: 'Cronos', anoFabricacao: 2020 },
+  ];
+
+  function retornarCarroFiat(carro) {
+    return (carro.marca == 'Fiat');
+  }
+
+  const carrosFiat = carros.filter( retornarCarroFiat );
+
+  console.log(carrosFiat);
+```
+
+### reduce
+* The native function (method) reduce is used to reduce an array to a single value. This reduced value can be transformed in a number, a string, an array or an object:
+```javascript
+const itensCarrinho = [
+    { id: 1, nome: 'Açucar', qnt: 2, valor: 2.00 },
+    { id: 2, nome: 'Álcool 70', qnt: 3, valor: 9.95 },
+    { id: 3, nome: 'Luvas descartáveis', qnt: 50, valor: 2.50 },
+    { id: 3, nome: 'Papel toalha', qnt: 1, valor: 2.00 },
+  ];
+  
+const total = itensCarrinho.reduce((total /* valor final */, item /* item do array */) => {
+    return total + item.valor
+}, 0 /* valor inicial */);
+
+console.log(total)
+```
+
+### sort
+* The native function (method) sort is used to change the ordering of items in an array, initially, in a alphabetic order:
+```javascript
+const frutas = ["Maçã", "Pera", "Banana"];
+frutas.sort();
+console.log(frutas) // [ 'Banana', 'Maçã', 'Pera']
+```
+* to sort numbers, this function uses the same rule as alphabetical order, so some problems can happen:
+```javascript
+const numeros = [10,1,2];
+numeros.sort();
+console.log(numeros) // [1, 10, 2]
+```
+* to solve this problem, we need to make some alterations:
+```javascript
+function ordenaNumeros(a, b){
+    return a - b;
+} // returns in ascending order
+
+function ordenaNumeros(a, b){
+    return b - a;
+} // returns in ascending order
+```
