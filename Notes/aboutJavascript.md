@@ -891,3 +891,7 @@ function ordenaNumeros(a, b){
     return b - a;
 } // returns in ascending order
 ```
+
+# MODULES
+
+## Working with import and export in JavaScript
