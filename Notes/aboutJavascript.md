@@ -895,3 +895,26 @@ function ordenaNumeros(a, b){
 # MODULES
 
 ## Working with import and export in JavaScript
+To use the `import` and `export` commands in JavaScript, you need a configuration file that allows the use of these commands.
+
+* Create an `package.json` and add an `{"type": "module"}` command
+* to import only one data or function we use 
+```javascript
+export default dataName
+import dataName from './data/dataName.js'
+```
+* to import more than one:
+```javascript
+export {data1, data2}
+export {data1, data2} from './dataName.js'
+```
+
+## Using require
+* `package.json` is not required when we use `require`:
+```javascript
+module.exports {
+    data1
+}
+
+let data = require('./data1.js')
+```
