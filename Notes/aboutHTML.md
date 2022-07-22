@@ -1,5 +1,39 @@
-<!-- HTML --><!-- HTML --><!-- HTML --><!-- HTML --><!-- HTML --><!-- HTML --><!-- HTML --><!-- HTML --><!-- HTML --><!-- HTML --><!-- HTML --><!-- HTML -->
+`HTML`
 
+Tags
+### `h1`, `h2` etc = header
+
+### `p` = parágrafo
+
+### `blockquote` ou `q` = citação
+
+### `<img src="" alt="" height="" width="" title="">` = adicionar imagens
+
+### `div` = agrupa elementos
+
+### `span` = marca palavras importantes no texto para uma futura estilização
+
+### `<iframe src="" height="" width=""> </iframe>` = permite exportar sites para dentro do seu. Alguns sites têm iframes específicos ou não permitem
+
+### `<a href="" target=""> </a>` = para links
+
+* `<a href="www.google.com">` comprar `</a>`
+
+* `<a href="tel:+5554972204968">` comprar `</a>`
+
+* `<a href="mailto:luis@gmail.com">` comprar `</a>`
+
+* `<a href="#id_do_elemento">` comprar `</a>`
+
+* `target` pode ser `_self` por padrão ou `_blank`*
+
+
+
+
+
+
+
+<!-- HTML -->
 <!--
 <h1> a <h6> (títulos e subtítulos)
 <p> (parágrafos)
